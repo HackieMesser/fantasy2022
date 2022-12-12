@@ -1,0 +1,26 @@
+players = [{'name': 'Tyreek Hill', 'catches': 100, 'targets': 139},{'name': 
+           'Justin Jefferson', 'catches': 99, 'targets': 142},
+          {'name':'Stefon Diggs','catches':94, 'targets':133}, ]
+
+
+def get_catch_rate(player):
+  if type(player) is not dict:
+    print("Playa not in the dict")
+    return
+  else:
+    pass
+
+    catches=player['catches']
+    targets=player['targets']
+
+    if catches > targets:
+      print("something is messed up, you cant have more catches than targets")
+
+    else:
+      pass
+    catch_rate = catches/targets
+
+    return catch_rate
+hill = players[0]
+hills_catch_rate = get_catch_rate(hill)
+print(hills_catch_rate)
