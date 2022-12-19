@@ -1,0 +1,34 @@
+runningback=[{'name':'Elliot','rushes':301, 'yards':1357,'rush_tds':12,'airyards':420,'receptions':54, 'air_tds':2 },
+             {'name':'McCaffery','rushes':287, 'yards':1387,'rush_tds':15,'airyards':1005,'receptions':116, 'air_tds':4},
+             {'name':'Henry','rushes':303, 'yards':1540,'rush_tds':16,'airyards':206,'receptions':18, 'air_tds':2 }]
+def fantasy_pts(rb, ppr = True):
+  if type(rb) is not dict:
+    print('Wrong argument')
+    return
+  name = rb['name']
+  rushes = rb['rushes']
+  ground_yards = rb['yards']
+  rush_tds = rb['rush_tds']
+  air_yards = rb['airyards']
+  receptions = rb['receptions']
+  air_tds = rb['air_tds']
+
+  total_yds = ground_yards + air_yards
+  total_tds = air_tds + rush_tds
+
+  if ppr:
+    points = total_yds*.1 + total_tds*6 + receptions
+    return rb['name'],ppr, points
+  else:
+    points = total_yds*.1 + total_tds*6
+    return rb['name'],ppr, points
+
+
+x=0
+while True:
+  if x > len(runningback) -1:
+    break
+  name = runningback[x]
+  points = fantasy_pts(name)
+  print(points)
+  x+=1
