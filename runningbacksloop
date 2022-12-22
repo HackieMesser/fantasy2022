@@ -23,12 +23,5 @@ def fantasy_pts(rb, ppr = True):
     points = total_yds*.1 + total_tds*6
     return rb['name'],ppr, points
 
-
-x=0
-while True:
-  if x > len(runningback) -1:
-    break
-  name = runningback[x]
-  points = fantasy_pts(name)
-  print(points)
-  x+=1
+for x in runningback:
+  print(fantasy_pts(x))
