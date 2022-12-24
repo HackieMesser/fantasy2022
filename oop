@@ -6,5 +6,5 @@ def __init__(self, name, pos, catches, targets):
   self.catches = catches
   self.targets = targets
 
-def catchrate(self):
+def catch_rate(self):
   return self.catches/self.targets
