@@ -5,6 +5,7 @@ class Player:
     self.pos = pos
     self.catches = catches
     self.targets = targets
+    self.penalties = penalties
 
   def catch_rate(self):
     return self.catches/self.targets
